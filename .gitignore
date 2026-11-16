@@ -1,0 +1,22 @@
+# Secrets / local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python / notebooks
+__pycache__/
+.ipynb_checkpoints/
+*.py[cod]
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Dataset caches and large generated outputs (review before publishing)
+data/raw/
+data/processed/
