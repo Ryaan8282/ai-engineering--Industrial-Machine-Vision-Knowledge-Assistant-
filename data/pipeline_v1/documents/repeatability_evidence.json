@@ -1,0 +1,15 @@
+{
+  "pipeline_version": "week3-v1",
+  "generated_at_utc": "2026-11-17T17:01:06.320491+00:00",
+  "type": "same-environment smoke test",
+  "checks": [
+    {
+      "data_type": "documents",
+      "status": "PASS",
+      "sources_equal": true,
+      "validation_equal": true,
+      "mappings_equal": true,
+      "chunk_count": 711
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "pipeline_version": "week3-v1",
+  "generated_at_utc": "2026-11-17T17:00:58.570075+00:00",
+  "records": [
+    {
+      "source_id": "SRC-01",
+      "source_filename": "ren_2022_machine_vision_defect_detection.pdf",
+      "source_title": "State of the Art in Defect Detection Based on Machine Vision",
+      "source_url": "https://doi.org/10.1007/s40684-021-00343-6",
+      "source_sha256": "2c475c3995aec0830cf11e91d4121264a17f8da0c0262366631de16ffe1bfd66",
+      "prepared_output": "data/processed/ren_2022_machine_vision_defect_detection_prepared_text.jsonl",
+      "prepared_sha256": "5f863e0e179fe4c8d44c9d9d7dde0bddf75118e507a325cdad21f9476d756a38",
+      "processing_note": "paragraph-aware page/block-aware chunks, max 500 chars; source title, DOI and page metadata retained",
+      "source_version": "2022 (published online 26 May 2021)",
+      "access_rights": "CC BY 4.0; check third-party figure rights",
+      "status": "Prepared; Topic 4 data quality review pending"
+    },
+    {
+      "source_id": "SRC-02",
+      "source_filename": "huetten_2024_deep_learning_visual_inspection.pdf",
+      "source_title": "Deep Learning for Automated Visual Inspection in Manufacturing and Maintenance: A Survey of Open-Access Papers",
+      "source_url": "https://doi.org/10.3390/asi7010011",
+      "source_sha256": "c872424ba9c9f8874e34898f17520aeca9fd0610a4194f9e8d4a8d91efdb8fd9",
+      "prepared_output": "data/processed/huetten_2024_deep_learning_visual_inspection_prepared_text.jsonl",
+      "prepared_sha256": "1ca38be551878c5b795bdf1f2542084c2318f79874e28e063579fe13bca445f7",
+      "processing_note": "paragraph-aware page/block-aware chunks, max 500 chars; source title, DOI and page metadata retained",
+      "source_version": "2024 (22 January 2024)",
+      "access_rights": "CC BY 4.0; check third-party figure rights",
+      "status": "Prepared; Topic 4 data quality review pending"
+    }
+  ],
+  "derived_outputs": [
+    {
+      "prepared_output": "data/processed/prepared_text.jsonl",
+      "prepared_sha256": "f672083870123d115b1582db54523e3ae7304a89a90301952dd0b21558afd7fd",
+      "contains_source_ids": [
+        "SRC-01",
+        "SRC-02"
+      ],
+      "processing_note": "Concatenation of source-specific page-labeled prepared chunks"
+    }
+  ],
+  "note": "Part B lineage: does not establish RAG accuracy, permission for third-party graphics, or source-text completeness."
+}

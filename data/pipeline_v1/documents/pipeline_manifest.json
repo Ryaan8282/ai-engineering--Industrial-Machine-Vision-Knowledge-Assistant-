@@ -1,0 +1,80 @@
+{
+  "pipeline_version": "week3-v1",
+  "generated_at_utc": "2026-11-17T17:01:06.915191+00:00",
+  "data_type": "documents",
+  "configuration": {
+    "method": "paragraph-aware",
+    "chunk_size": 500,
+    "source_ids": [
+      "SRC-01",
+      "SRC-02"
+    ],
+    "page_metadata": true,
+    "cleanup_version": "v1.1-known-footer-and-orphan-tail"
+  },
+  "processing_method": "batch ETL: PDF text blocks → cleaned page-labeled paragraph-aware 500-char JSONL",
+  "sources": [
+    {
+      "source_id": "SRC-01",
+      "path": "data/raw/ren_2022_machine_vision_defect_detection.pdf",
+      "title": "State of the Art in Defect Detection Based on Machine Vision",
+      "doi": "https://doi.org/10.1007/s40684-021-00343-6",
+      "sha256": "2c475c3995aec0830cf11e91d4121264a17f8da0c0262366631de16ffe1bfd66",
+      "publication_date": "2021-05-26"
+    },
+    {
+      "source_id": "SRC-02",
+      "path": "data/raw/huetten_2024_deep_learning_visual_inspection.pdf",
+      "title": "Deep Learning for Automated Visual Inspection in Manufacturing and Maintenance: A Survey of Open-Access Papers",
+      "doi": "https://doi.org/10.3390/asi7010011",
+      "sha256": "c872424ba9c9f8874e34898f17520aeca9fd0610a4194f9e8d4a8d91efdb8fd9",
+      "publication_date": "2024-01-22"
+    }
+  ],
+  "outputs": [
+    "data/pipeline_v1/documents/ren_2022_machine_vision_defect_detection_prepared_text.jsonl",
+    "data/pipeline_v1/documents/huetten_2024_deep_learning_visual_inspection_prepared_text.jsonl",
+    "data/pipeline_v1/documents/prepared_text.jsonl"
+  ],
+  "source_output_mapping": [
+    {
+      "source": "data/raw/ren_2022_machine_vision_defect_detection.pdf",
+      "prepared_output": "data/pipeline_v1/documents/ren_2022_machine_vision_defect_detection_prepared_text.jsonl",
+      "source_sha256": "2c475c3995aec0830cf11e91d4121264a17f8da0c0262366631de16ffe1bfd66"
+    },
+    {
+      "source": "data/raw/huetten_2024_deep_learning_visual_inspection.pdf",
+      "prepared_output": "data/pipeline_v1/documents/huetten_2024_deep_learning_visual_inspection_prepared_text.jsonl",
+      "source_sha256": "c872424ba9c9f8874e34898f17520aeca9fd0610a4194f9e8d4a8d91efdb8fd9"
+    }
+  ],
+  "combined_output": "data/pipeline_v1/documents/prepared_text.jsonl",
+  "inspection": {
+    "SRC-01": {
+      "pages": 31,
+      "pages_with_extractable_text": 31
+    },
+    "SRC-02": {
+      "pages": 38,
+      "pages_with_extractable_text": 38
+    }
+  },
+  "validation": {
+    "record_count": 711,
+    "output_count": 3,
+    "output_sha256": {
+      "data/pipeline_v1/documents/ren_2022_machine_vision_defect_detection_prepared_text.jsonl": "5f863e0e179fe4c8d44c9d9d7dde0bddf75118e507a325cdad21f9476d756a38",
+      "data/pipeline_v1/documents/huetten_2024_deep_learning_visual_inspection_prepared_text.jsonl": "1ca38be551878c5b795bdf1f2542084c2318f79874e28e063579fe13bca445f7",
+      "data/pipeline_v1/documents/prepared_text.jsonl": "f672083870123d115b1582db54523e3ae7304a89a90301952dd0b21558afd7fd"
+    },
+    "output_bytes": {
+      "data/pipeline_v1/documents/ren_2022_machine_vision_defect_detection_prepared_text.jsonl": 362378,
+      "data/pipeline_v1/documents/huetten_2024_deep_learning_visual_inspection_prepared_text.jsonl": 338617,
+      "data/pipeline_v1/documents/prepared_text.jsonl": 700995
+    },
+    "nonempty_page_references": true
+  },
+  "source_version": "Ren 2022; Hütten 2024",
+  "access_rights": "CC BY 4.0 identified in both papers; check third-party content and attribution when redistributing",
+  "limitations": "PDF multi-column, equations, tables and figures require later manual review; no embeddings or RAG evaluation performed"
+}
